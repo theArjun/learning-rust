@@ -1,21 +1,18 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-
 // This attribute tells Rust to use C naming conventions for the add_numbers function.
 #[no_mangle]
 pub extern "C" fn add_numbers(a: i32, b: i32) -> i32 {
-    a + b
-}
 
+    let mut count = 100_000_000;
+    let mut result: i32;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    loop {
+        result = a + b;
+        count -=1;
+        if count == 0 {
+            break;
+        }
     }
+
+    result
 }
+
