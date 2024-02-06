@@ -7,8 +7,3 @@ edition = "2021"
 
 [dependencies]
 chrono = "0.4.33"
-
-
-[lib]
-name="get_date_ranges_ffi"
-crate-type=["dylib"]
