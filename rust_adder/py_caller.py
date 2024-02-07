@@ -15,8 +15,7 @@ result = lib.add_numbers(5, 7)
 end_time = time.perf_counter()
 
 rust_time = end_time - start_time
-
-print("From rust: ", end_time - start_time)
+print("From rust: ", rust_time)
 
 
 def add_numbers(a, b):
@@ -25,10 +24,11 @@ def add_numbers(a, b):
 
 # In python
 start_time = time.perf_counter()
-for i in range(100_000_000):
+for i in range(1_000_000_000):
     result = add_numbers(5, 7)
 end_time = time.perf_counter()
 python_time = end_time - start_time
+print("From python: ", python_time)
 
 rust_is_fast_by = python_time / rust_time * 100
 print(f"Rust is fast by : {rust_is_fast_by:2f}")
