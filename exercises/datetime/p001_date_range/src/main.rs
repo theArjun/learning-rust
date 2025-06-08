@@ -10,6 +10,6 @@ fn main() {
     let date_ranges = get_date_ranges(start_date, end_date);
 
     for date in date_ranges {
-        println!("{}", date.weekday())
+        println!("{} ", date.weekday())
     }
 }

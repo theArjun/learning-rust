@@ -1,12 +1,9 @@
 [package]
-name = "rust_adder"
+name = "p001_date_range"
 version = "0.1.0"
 edition = "2021"
-
-[lib]
-name = "rust_adder"
-crate-type = ["cdylib"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+chrono = "0.4.33"
