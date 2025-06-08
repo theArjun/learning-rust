@@ -1,6 +1,7 @@
 # 🔀 Control Flow
 
 **Quick Notes:**
+
 - **If:** `if condition { } else { }`
 - **If let:** `if let Some(x) = option { }`
 - **Loop:** `loop { break; }` (infinite), `while condition { }`

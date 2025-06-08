@@ -1,4 +1,4 @@
-use chrono::{NaiveDate, Duration};
+use chrono::{Duration, NaiveDate};
 
 #[no_mangle]
 pub extern  "C" fn get_date_ranges(start_date: NaiveDate, end_date: NaiveDate) -> Vec<NaiveDate> {

@@ -1,6 +1,7 @@
 # Rust Lifetimes - Sticky Notes 📌
 
 ## 🎯 **What are Lifetimes?**
+
 - **Think of lifetimes as "rental agreements" for memory**
 - They ensure references don't outlive the data they point to
 - Prevent **dangling pointers** (pointing to freed memory)
@@ -8,15 +9,18 @@
 ## 🔑 **Key Rules to Remember**
 
 ### **Rule #1: The Golden Rule**
+
 > **"A reference cannot outlive the data it references"**
 
 ### **Rule #2: Function Parameters**
+
 ```rust
 // When multiple refs go in, Rust needs to know which lifetime comes out
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str { ... }
 ```
 
 ### **Rule #3: Struct Fields**
+
 ```rust
 // If struct holds a reference, it needs a lifetime
 struct ImportantExcerpt<'a> {
@@ -27,12 +31,14 @@ struct ImportantExcerpt<'a> {
 ## 🧠 **Mental Models**
 
 ### **The Landlord Analogy**
+
 - **Data owner** = Landlord 🏠
 - **Reference** = Tenant 👤
 - **Lifetime** = Lease duration 📅
 - Rule: Tenant can't stay after landlord sells the house!
 
 ### **The Library Book Model**
+
 - You can **borrow** a book (reference)
 - But you can't keep it longer than the library is open (data lifetime)
 - Multiple people can read the same book (multiple immutable refs)
@@ -53,6 +59,7 @@ where T: 'a    // T must live at least as long as 'a
 ## 🚨 **Common Gotchas & Fixes**
 
 ### **Problem: Returning References**
+
 ```rust
 // ❌ This won't compile
 fn bad_function() -> &str {
@@ -67,6 +74,7 @@ fn good_function() -> String {
 ```
 
 ### **Problem: Multiple References**
+
 ```rust
 // ❌ Ambiguous lifetimes
 fn longest(x: &str, y: &str) -> &str { ... }
@@ -78,6 +86,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str { ... }
 ## 🎪 **Lifetime Elision (The Magic Tricks)**
 
 Rust can **auto-infer** lifetimes in these cases:
+
 1. **Single input reference** → output gets same lifetime
 2. **Method with &self** → output gets &self's lifetime
 3. **Simple cases** → Rust figures it out
@@ -96,7 +105,9 @@ fn first_word<'a>(s: &'a str) -> &'a str { ... }
 4. **Use lifetime elision** - let Rust infer when possible
 
 ## 🔍 **Debug Mantra**
+
 When lifetime errors occur, ask:
+
 1. **"Who owns this data?"**
 2. **"How long does it live?"**
 3. **"Am I trying to use it after it's gone?"**

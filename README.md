@@ -3,23 +3,27 @@
 ## Creating New Rust Projects
 
 ### Binary Project (Executable)
+
 ```bash
 cargo new project_name
 cd project_name
 ```
 
 ### Library Project
+
 ```bash
 cargo new --lib library_name
 cd library_name
 ```
 
 ### Binary Project in Current Directory
+
 ```bash
 cargo init
 ```
 
 ### Library Project in Current Directory
+
 ```bash
 cargo init --lib
 ```
@@ -27,6 +31,7 @@ cargo init --lib
 ## Project Structure
 
 ### Binary Project
+
 ```
 project_name/
 ├── Cargo.toml
@@ -35,6 +40,7 @@ project_name/
 ```
 
 ### Library Project
+
 ```
 library_name/
 ├── Cargo.toml
@@ -45,6 +51,7 @@ library_name/
 ## Working with Modules
 
 ### Creating Modules in Same File
+
 ```rust
 mod my_module {
     pub fn my_function() {
@@ -60,7 +67,9 @@ fn main() {
 ### Creating Modules in Separate Files
 
 #### Single File Module
+
 Create `src/my_module.rs`:
+
 ```rust
 pub fn my_function() {
     println!("Hello from module");
@@ -68,6 +77,7 @@ pub fn my_function() {
 ```
 
 In `src/main.rs` or `src/lib.rs`:
+
 ```rust
 mod my_module;
 
@@ -77,7 +87,9 @@ fn main() {
 ```
 
 #### Directory Module
+
 Create `src/my_module/mod.rs`:
+
 ```rust
 pub fn my_function() {
     println!("Hello from module");
@@ -87,12 +99,14 @@ pub fn my_function() {
 Or create `src/my_module.rs` and `src/my_module/submodule.rs`
 
 ### Module Visibility
+
 - `pub` - public, can be used from outside
 - No `pub` - private, only within module
 
 ## Adding Dependencies
 
 Edit `Cargo.toml`:
+
 ```toml
 [dependencies]
 serde = "1.0"
@@ -102,6 +116,7 @@ tokio = { version = "1.0", features = ["full"] }
 ## Common Commands
 
 ### Build and Run
+
 ```bash
 cargo build          # Build project
 cargo run            # Build and run
@@ -111,13 +126,16 @@ cargo doc            # Generate documentation
 ```
 
 ### Release Build
+
 ```bash
 cargo build --release
 cargo run --release
 ```
 
 ### Adding Examples
+
 Create `examples/example_name.rs`:
+
 ```bash
 cargo run --example example_name
 ```
@@ -125,6 +143,7 @@ cargo run --example example_name
 ### Workspaces
 
 Create `Cargo.toml` in root:
+
 ```toml
 [workspace]
 members = [
@@ -137,6 +156,7 @@ members = [
 ## Library Crate Usage
 
 ### In lib.rs
+
 ```rust
 pub mod my_module;
 
@@ -150,6 +170,7 @@ fn private_function() {
 ```
 
 ### Using External Crates
+
 ```rust
 use serde::{Serialize, Deserialize};
 use std::collections::HashMap;
@@ -158,6 +179,7 @@ use std::collections::HashMap;
 ## Testing
 
 ### Unit Tests
+
 ```rust
 #[cfg(test)]
 mod tests {
@@ -171,7 +193,9 @@ mod tests {
 ```
 
 ### Integration Tests
+
 Create `tests/integration_test.rs`:
+
 ```rust
 use library_name;
 
@@ -182,6 +206,7 @@ fn test_something() {
 ```
 
 Run tests:
+
 ```bash
 cargo test
 cargo test test_name

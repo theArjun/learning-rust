@@ -1,11 +1,13 @@
 # 📋 Polars DataFrame Exercise
 
 **What it does:**
+
 - Creates a Polars DataFrame (2D table)
 - Uses mixed data types: strings, dates, floats
 - Demonstrates DataFrame creation with `df!` macro
 
 **Key concepts:**
+
 - `df!` macro for easy DataFrame creation
 - Multiple column types in one DataFrame
 - `chrono::NaiveDate` integration with Polars

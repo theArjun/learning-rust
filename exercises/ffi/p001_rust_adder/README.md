@@ -4,7 +4,8 @@ A simple Foreign Function Interface (FFI) example demonstrating how to call Rust
 
 ## Overview
 
-This project creates a C-compatible dynamic library from Rust code that exports basic arithmetic functions. The library can be called from any language that supports C FFI, such as Python, C, C++, etc.
+This project creates a C-compatible dynamic library from Rust code that exports basic arithmetic functions. The library
+can be called from any language that supports C FFI, such as Python, C, C++, etc.
 
 ## Functions Exported
 
@@ -14,6 +15,7 @@ This project creates a C-compatible dynamic library from Rust code that exports 
 ## Building the Library
 
 ### Prerequisites
+
 - Rust toolchain installed
 - Python 3.x (for the example)
 
@@ -25,9 +27,9 @@ This project creates a C-compatible dynamic library from Rust code that exports 
    ```
 
    This creates a dynamic library at:
-   - **Linux:** `./target/release/libp001_rust_adder.so`
-   - **macOS:** `./target/release/libp001_rust_adder.dylib`
-   - **Windows:** `./target/release/p001_rust_adder.dll`
+    - **Linux:** `./target/release/libp001_rust_adder.so`
+    - **macOS:** `./target/release/libp001_rust_adder.dylib`
+    - **Windows:** `./target/release/p001_rust_adder.dll`
 
 ## Usage Examples
 

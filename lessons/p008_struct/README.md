@@ -1,6 +1,7 @@
 # 🏗️ Structs
 
 **Quick Notes:**
+
 - **Definition:** `struct User { name: String, age: u32 }`
 - **Create:** `let user = User { name: "Alice".to_string(), age: 30 };`
 - **Access:** `user.name`, `user.age`
