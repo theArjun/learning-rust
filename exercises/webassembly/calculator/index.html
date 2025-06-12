@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator WASM Test</title>
+</head>
+<body>
+  <script type="module">
+    import init, { add, subtract, multiply, divide, modulo } from './pkg/calculator.js';
+
+    async function run() {
+      await init(); // Initialize the WASM module
+      console.log("Add:", add(10, 5)); // 15
+      console.log("Subtract:", subtract(10, 5)); // 5
+      console.log("åd:", multiply(10, 5)); // 50
+      console.log("Divide:", divide(10, 3)); // 3
+      console.log("Divide by zero:", divide(10, 0)); // null
+      console.log("Modulo:", modulo(10, 3)); // 1
+    }
+
+    run();
+  </script>
+</body>
+</html>
