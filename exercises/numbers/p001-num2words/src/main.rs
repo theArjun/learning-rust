@@ -1,5 +1,5 @@
 use num2words::Num2Words;
-use titlecase::{Titlecase};
+use titlecase::Titlecase;
 
 fn main() {
     let number = 1456;
