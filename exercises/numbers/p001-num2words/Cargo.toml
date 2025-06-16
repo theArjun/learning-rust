@@ -1,0 +1,8 @@
+[package]
+name = "p001-num2words"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+num2words = "1.2.0"
+titlecase = "3.6.0"
